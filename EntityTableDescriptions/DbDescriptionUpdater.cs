@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Web;
-using System.Xml;
 using EntityTableDescriptions.Configuration;
 using EntityTableDescriptions.Data;
 using EntityTableDescriptions.Services;
-using Tools;
 
 namespace EntityTableDescriptions
 {

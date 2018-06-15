@@ -8,7 +8,6 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Xml;
 using EntityTableDescriptions.Data;
-using Tools;
 
 namespace EntityTableDescriptions.Services
 {
@@ -73,7 +72,7 @@ namespace EntityTableDescriptions.Services
 				.Where(x => x.Name != null && x.Comment != null)
 				.Select(x => new
 				{
-					Type = typeRegex.Match(x.Name).Value.IsNullOrEmpty() ? null : _context.GetType().Assembly.GetType(typeRegex.Match(x.Name).Value),
+					Type = string.IsNullOrEmpty(typeRegex.Match(x.Name).Value) ? null : _context.GetType().Assembly.GetType(typeRegex.Match(x.Name).Value),
 					x.Comment,
 					PropName = propRegex.Match(x.Name).Value,
 				})
