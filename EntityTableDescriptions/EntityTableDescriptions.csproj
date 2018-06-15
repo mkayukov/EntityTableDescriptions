@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -58,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\EntityDescriptionsHandler.cs" />
     <Compile Include="Services\CurrentDescriptionsService.cs" />
     <Compile Include="Data\Enum\DbObjectType.cs" />
     <Compile Include="DbDescriptionUpdater.cs" />

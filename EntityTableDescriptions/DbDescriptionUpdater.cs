@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Xml;
+using EntityTableDescriptions.Configuration;
 using EntityTableDescriptions.Data;
 using EntityTableDescriptions.Services;
 using Tools;
@@ -16,6 +17,7 @@ namespace EntityTableDescriptions
 	{
 		public static void UpdateDescriptions<TContext>(TContext context, IEnumerable<Type> entityTypes = null, string xmlDocLocation = null) where TContext : DbContext
 		{
+			if (!EntityDescriptionsHandler.IsEnabledDeploy) return;
 			var assembly = typeof(TContext).Assembly;
 			var parser = new XmlDocParseService(assembly,xmlDocLocation,context);
 			if (!parser.HasMembers) return;
