@@ -1,3 +1,5 @@
+using System;
+
 namespace EntityTableDescriptions.Data
 {
 	internal class TableColumn : Table
@@ -17,7 +19,7 @@ namespace EntityTableDescriptions.Data
 
 		public override string ToString() => $"{base.ToString()}.{ColumnName}";
 
-		private bool Equals(TableColumn other) => base.Equals(other) && string.Equals(ColumnName, other.ColumnName);
+		private bool Equals(TableColumn other) => base.Equals(other) && string.Equals(ColumnName, other.ColumnName, StringComparison.InvariantCultureIgnoreCase);
 
 		public override bool Equals(object obj)
 		{

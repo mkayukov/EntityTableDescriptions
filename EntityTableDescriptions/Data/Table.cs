@@ -1,3 +1,5 @@
+using System;
+
 namespace EntityTableDescriptions.Data
 {
 	internal class Table
@@ -16,7 +18,7 @@ namespace EntityTableDescriptions.Data
 
 		protected bool Equals(Table other)
 		{
-			return string.Equals(SchemaName, other.SchemaName) && string.Equals(TableName, other.TableName);
+			return string.Equals(SchemaName, other.SchemaName, StringComparison.InvariantCultureIgnoreCase) && string.Equals(TableName, other.TableName, StringComparison.InvariantCultureIgnoreCase);
 		}
 
 		public override bool Equals(object obj)
