@@ -32,8 +32,8 @@ namespace EntityTableDescriptions.Data
 		{
 			unchecked
 			{
-				var hashCode = SchemaName?.GetHashCode() ?? 0;
-				hashCode = (hashCode * 397) ^ (TableName?.GetHashCode() ?? 0);
+				var hashCode = SchemaName?.ToLowerInvariant().GetHashCode() ?? 0;
+				hashCode = (hashCode * 397) ^ (TableName?.ToLowerInvariant().GetHashCode() ?? 0);
 				return hashCode;
 			}
 		}

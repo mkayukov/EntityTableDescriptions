@@ -32,7 +32,7 @@ namespace EntityTableDescriptions.Data
 		{
 			unchecked
 			{
-				return (base.GetHashCode() * 397) ^ (ColumnName?.GetHashCode() ?? 0);
+				return (base.GetHashCode() * 397) ^ (ColumnName?.ToLowerInvariant().GetHashCode() ?? 0);
 			}
 		}
 
